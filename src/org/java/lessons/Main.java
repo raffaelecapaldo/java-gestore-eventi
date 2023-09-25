@@ -5,6 +5,52 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
+		System.out.println("TEST BONUS 4");
+		try {
+			Evento ev1 = new Evento("Matrix VI", "14/03/2025", 20);
+			Evento ev2 = new Evento("La guerra dei mondi II", "14/03/2025", 20);
+			Evento ev3 = new Evento("La singolarità", "11/03/2025", 20);
+			Evento ev4 = new Evento("COVID-27", "05/03/2025", 10);
+		
+			ProgrammEventi prog = new ProgrammEventi("Programmazione film estate inverno 2025");
+			
+			prog.aggiungiEvento(ev1);
+			prog.aggiungiEvento(ev2);
+			prog.aggiungiEvento(ev3);
+			prog.aggiungiEvento(ev4);
+
+			
+			System.out.print("\nNUMERO EVENTI: ");
+			System.out.println(prog.numEventi());
+			System.out.println("\nPROGRAMMA INTERO");
+			System.out.println(prog);
+			
+			System.out.println("RICERCA 1");
+			prog.cercaPerData("14/03/2025");
+			System.out.println("RICERCA 2");
+			prog.cercaPerData("15/03/2025");
+			System.out.println();
+			
+			prog.resetProgramma();
+			System.out.println("\nPROGRAMMA INTERO");
+			System.out.println(prog);
+			
+			System.out.println("GESTIONALE CREAZIONE EVENTO - START");
+
+
+
+			
+
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//INIZIO PROGRAMMA ORIGINALE
+		
+		
+		
 		Scanner sc = new Scanner(System.in);
 		Evento evento = null;
 		boolean error = false;
@@ -86,38 +132,7 @@ public class Main {
 //			e.printStackTrace();
 //		}
 		
-		//TEST BONUS
-//		try {
-//			Evento ev1 = new Evento("titolone", "14/03/2025", 20);
-//			Evento ev2 = new Evento("titoloneee", "14/03/2025", 20);
-//			Evento ev3 = new Evento("titoloneea", "11/03/2025", 20);
-//			Evento ev4 = new Evento("titoloneea", "05/03/2025", 10);
-//
-//			
-//			ProgrammEventi prog = new ProgrammEventi("programmone");
-//			
-//			prog.aggiungiEvento(ev1);
-//			prog.aggiungiEvento(ev2);
-//			prog.aggiungiEvento(ev3);
-//			prog.aggiungiEvento(ev4);
-//
-//			
-//			
-//			System.out.println(prog.numEventi());
-//			System.out.println(prog);
-//			
-//			prog.cercaPerData("14/03/2025");
-//			prog.cercaPerData("15/03/2025");
-//
-//
-//
-//			
-//
-//
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		
 		
 		
 	}

@@ -5,12 +5,11 @@ import java.time.format.DateTimeFormatter;
 
 public class Evento {
 
-	String titolo;
-	String dataString;
-	LocalDate data;
-	int posti;
-	int postiPrenotati;
-	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	private String titolo;
+	private LocalDate data;
+	private int posti;
+	private int postiPrenotati;
+	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 	
 	Evento(String titolo, String dataString, int posti) throws Exception {

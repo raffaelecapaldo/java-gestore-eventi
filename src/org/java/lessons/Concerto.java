@@ -7,9 +7,9 @@ import java.time.format.DateTimeFormatter;
 
 public class Concerto extends Evento {
 
-	LocalTime ora;
-	BigDecimal prezzo;
-	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+	private LocalTime ora;
+	private BigDecimal prezzo;
+	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 	
 	Concerto(String titolo, String dataString, int posti, String oraString, double prezzo) throws Exception {
 		super(titolo, dataString, posti);

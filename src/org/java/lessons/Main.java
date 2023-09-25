@@ -43,7 +43,8 @@ public class Main {
 			System.out.println("Media prezzo dei concerti: " + prog.mediaPrezzoConcerto());
 			System.out.println("Media prezzo degli spettacoli: " + prog.mediaPrezzoSpettacolo());
 			
-			System.out.println("\nPROGRAMMA INTERO");
+			prog.resetProgramma();
+			System.out.println("\nPROGRAMMA INTERO (test svuotamento)");
 			System.out.println(prog);
 			
 			

@@ -74,5 +74,16 @@ public class Main {
 		System.out.println("Posti disponibili: " + (evento.getPosti()-evento.getPostiPrenotati()));
 
 		
+		
+		// TEST MILESTONE 3
+//		try {
+//			Concerto concerto = new Concerto("Il concertone", "24/03/2025", 33, "09:00", 12.53);
+//			System.out.println(concerto);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		
 	}
 }

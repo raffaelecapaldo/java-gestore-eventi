@@ -1,17 +1,50 @@
 package org.java.lessons;
 
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
-		Evento event = null;
+		Scanner sc = new Scanner(System.in);
+		Evento evento = null;
+		boolean error = false;
+	
+		do {
 		try {
-			event = new Evento("prova", "10/03/2024", 50);
+			error = false;
+			System.out.print("Inserire nome evento: ");
+			String titoloEvento = sc.nextLine();
+			System.out.print("Inserire data evento: (dd/mm/yyyy)");
+			String dataEvento = sc.nextLine();
+			System.out.println("Quanti posti saranno disponibili?");
+			int numPosti = Integer.valueOf(sc.nextLine());
+			evento = new Evento(titoloEvento, dataEvento, numPosti);
+		 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println(e.getMessage());
-		}
+			System.out.println("Errore: " + e.getMessage());
+			error = true;
+		}} while (error);
 		
-		System.out.println(event);
+		String rispostaPrenotazione;
+		boolean errorPrenotazione = false;
+		do {
+		do {
+			errorPrenotazione = false;
+			System.out.print("\nVuoi già prenotare dei posti?");
+			rispostaPrenotazione = sc.nextLine().toLowerCase();
+			error = !rispostaPrenotazione.equals("s") && !rispostaPrenotazione.equals("n");
+			if (error) System.out.println("INSERIRE SOLO S O N");
+			} while (error);
+			
+			if (rispostaPrenotazione.equals("s")) {
+				System.out.println("Quanti posto vuoi prenotare?");
+				try {
+					evento.prenota(Integer.valueOf(sc.nextLine()));
+				}  catch (Exception e) {
+					System.out.println("Errore : " + e.getMessage());
+					errorPrenotazione = true;
+				}
+			}} while (errorPrenotazione);
 		
 	}
 }

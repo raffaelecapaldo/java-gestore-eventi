@@ -20,18 +20,19 @@ public class Evento {
 		setPostiPrenotati(0);
 	}
 	
-	public void prenota() throws Exception {
-		if (data.isBefore(LocalDate.now()) || posti == postiPrenotati)
-			throw new Exception("Evento passato o posti esauri");
-		postiPrenotati++;
-		System.out.println("Posto prenotato");
+	//miglioramento prenota e discici per milestone 2
+	public void prenota(int quantita) throws Exception {
+		if (data.isBefore(LocalDate.now()) || posti < postiPrenotati+quantita)
+			throw new Exception("Evento passato o quantità posti richiesta non disponibile");
+		postiPrenotati =+ quantita;
+		System.out.println("Posti prenotati");
 			
 	}
 	
-	public void disdici() throws Exception {
-		if (data.isBefore(LocalDate.now()) || postiPrenotati == 0)
-			throw new Exception("Evento passato o nessun posto prenotato");
-		postiPrenotati--;
+	public void disdici(int quantita) throws Exception {
+		if (data.isBefore(LocalDate.now()) || postiPrenotati-quantita < 0)
+			throw new Exception("Evento passato o posti da disdire superiori a numero posti prenotati");
+		postiPrenotati =- quantita;
 			
 	}
 	

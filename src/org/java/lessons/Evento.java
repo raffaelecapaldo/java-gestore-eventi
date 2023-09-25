@@ -24,7 +24,7 @@ public class Evento {
 	public void prenota(int quantita) throws Exception {
 		if (data.isBefore(LocalDate.now()) || posti < postiPrenotati+quantita)
 			throw new Exception("Evento passato o quantità posti richiesta non disponibile");
-		postiPrenotati =+ quantita;
+		postiPrenotati += quantita;
 		System.out.println("Posti prenotati");
 			
 	}
@@ -32,7 +32,7 @@ public class Evento {
 	public void disdici(int quantita) throws Exception {
 		if (data.isBefore(LocalDate.now()) || postiPrenotati-quantita < 0)
 			throw new Exception("Evento passato o posti da disdire superiori a numero posti prenotati");
-		postiPrenotati =- quantita;
+		postiPrenotati -= quantita;
 		System.out.println("Posti disdetti");
 			
 	}

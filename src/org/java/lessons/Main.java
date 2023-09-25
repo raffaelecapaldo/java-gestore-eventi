@@ -14,9 +14,9 @@ public class Main {
 			error = false;
 			System.out.print("Inserire nome evento: ");
 			String titoloEvento = sc.nextLine();
-			System.out.print("Inserire data evento: (dd/mm/yyyy)");
+			System.out.print("Inserire data evento (dd/mm/yyyy): ");
 			String dataEvento = sc.nextLine();
-			System.out.println("Quanti posti saranno disponibili?");
+			System.out.print("Quanti posti saranno disponibili?");
 			int numPosti = Integer.valueOf(sc.nextLine());
 			evento = new Evento(titoloEvento, dataEvento, numPosti);
 		 
@@ -37,7 +37,7 @@ public class Main {
 			} while (error);
 			
 			if (rispostaPrenotazione.equals("s")) {
-				System.out.println("Quanti posto vuoi prenotare?");
+				System.out.print("Quanti posto vuoi prenotare?");
 				try {
 					evento.prenota(Integer.valueOf(sc.nextLine()));
 				}  catch (Exception e) {
@@ -54,7 +54,7 @@ public class Main {
 		do {
 		do {
 			erroreDisdette = false;
-			System.out.print("Vuoi disdire dei posti?");
+			System.out.print("\nVuoi disdire dei posti?");
 			rispostaDisdette = sc.nextLine().toLowerCase();
 			error = !rispostaDisdette.equals("s") && !rispostaDisdette.equals("n");
 			if (error) System.out.println("INSERIRE SOLO S O N");

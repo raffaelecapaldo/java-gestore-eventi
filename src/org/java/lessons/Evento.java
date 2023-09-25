@@ -19,6 +19,26 @@ public class Evento {
 		setPosti(posti);
 		setPostiPrenotati(0);
 	}
+	
+	public void prenota() throws Exception {
+		if (data.isBefore(LocalDate.now()) || posti == postiPrenotati)
+			throw new Exception("Evento passato o posti esauri");
+		postiPrenotati++;
+		System.out.println("Posto prenotato");
+			
+	}
+	
+	public void disdici() throws Exception {
+		if (data.isBefore(LocalDate.now()) || postiPrenotati == 0)
+			throw new Exception("Evento passato o nessun posto prenotato");
+		postiPrenotati--;
+			
+	}
+	
+	@Override
+	public String toString() {
+		return getData() + " - " + getTitolo();
+	}
 
 	public String getTitolo() {
 		return titolo;

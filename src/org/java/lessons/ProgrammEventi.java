@@ -32,17 +32,19 @@ public class ProgrammEventi {
 
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		LocalDate dataCercata = LocalDate.parse(dataString, formatter);
-		
+		int trovate = 0;
+
 		for (Evento evento: eventi) {
-			int trovate = 0;
 			if (evento.getRealDate().isEqual(dataCercata)) {
 				System.out.println(evento);
 				trovate++;
 			}
 			
-			if (trovate == 0) {
-				System.out.println("Nessun evento per questa data");
-			}
+			
+		}
+		
+		if (trovate == 0) {
+			System.out.println("Nessun evento per questa data");
 		}
 
 		
@@ -55,6 +57,20 @@ public class ProgrammEventi {
 	public void resetProgramma() {
 		eventi.clear();
 		System.out.println("Tutti gli eventi sono stati cancellati");
+	}
+	
+	@Override 
+	public String toString() {
+		List<Evento> eventiOrdinata = new ArrayList<Evento>(eventi);
+		eventiOrdinata.sort((d1,d2) -> d1.getRealDate().compareTo(d2.getRealDate()));
+		String stampa = getTitolo() + "\n";
+		for (Evento evento: eventiOrdinata) {
+			stampa += "- " + evento.getData() + " - " + evento.getTitolo() + "\n";
+		}
+		
+		return stampa;
+
+		
 	}
 }
 

@@ -7,17 +7,24 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println("TEST BONUS 4");
 		try {
-			Evento ev1 = new Evento("Matrix VI", "14/03/2025", 20);
-			Evento ev2 = new Evento("La guerra dei mondi II", "14/03/2025", 20);
-			Evento ev3 = new Evento("La singolarità", "11/03/2025", 20);
-			Evento ev4 = new Evento("COVID-27", "05/03/2025", 10);
-		
-			ProgrammEventi prog = new ProgrammEventi("Programmazione film estate inverno 2025");
 			
-			prog.aggiungiEvento(ev1);
-			prog.aggiungiEvento(ev2);
-			prog.aggiungiEvento(ev3);
-			prog.aggiungiEvento(ev4);
+			
+		
+			ProgrammEventi prog = new ProgrammEventi("Programmazione eventi inverno 2025");
+			
+			Spettacolo sp1 = new Spettacolo("Matrix", "28/03/2025", 20, 10.00);
+			Spettacolo sp2 = new Spettacolo("La vita è bella", "26/03/2025", 20, 11.90);
+			Spettacolo sp3 = new Spettacolo("Harry Potter", "25/03/2025", 20, 13.50);
+			Concerto c1 = new Concerto("Ligabue", "28/03/2025", 30, "09:00", 35.50);
+			Concerto c2 = new Concerto("Caparezza", "26/03/2025", 30, "11:00", 15.20);
+			Concerto c3 = new Concerto("Kraftwerk", "25/03/2025", 30, "12:00", 17.00);
+			
+			prog.aggiungiEvento(sp1);
+			prog.aggiungiEvento(sp2);
+			prog.aggiungiEvento(sp3);
+			prog.aggiungiEvento(c1);
+			prog.aggiungiEvento(c2);
+			prog.aggiungiEvento(c3);
 
 			
 			System.out.print("\nNUMERO EVENTI: ");
@@ -26,14 +33,22 @@ public class Main {
 			System.out.println(prog);
 			
 			System.out.println("RICERCA 1");
-			prog.cercaPerData("14/03/2025");
+			prog.cercaPerData("26/03/2025");
 			System.out.println("RICERCA 2");
-			prog.cercaPerData("15/03/2025");
+			prog.cercaPerData("15/03/2023");
 			System.out.println();
 			
-			prog.resetProgramma();
+			System.out.println("\n MEDIE PREZZI");
+			System.out.println("Media prezzo di tutti gli eventi: " + prog.mediaPrezzoEvento());
+			System.out.println("Media prezzo dei concerti: " + prog.mediaPrezzoConcerto());
+			System.out.println("Media prezzo degli spettacoli: " + prog.mediaPrezzoSpettacolo());
+			
 			System.out.println("\nPROGRAMMA INTERO");
 			System.out.println(prog);
+			
+			
+
+
 			
 			System.out.println("GESTIONALE CREAZIONE EVENTO - START");
 

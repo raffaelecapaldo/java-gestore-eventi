@@ -1,5 +1,7 @@
 package org.java.lessons;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -72,6 +74,48 @@ public class ProgrammEventi {
 
 		
 	}
+	
+	public BigDecimal mediaPrezzoConcerto() {
+		BigDecimal sum = BigDecimal.ZERO;
+		BigDecimal counter = BigDecimal.ZERO;
+		
+		for (Evento evento: eventi) {
+			if (evento instanceof Concerto) {
+			sum = sum.add(((Concerto) evento).getPrezzo());
+			counter = counter.add(new BigDecimal(1));
+			}}
+		
+		return sum.divide(counter, 2, RoundingMode.HALF_UP);
+
+	}
+	
+	public BigDecimal mediaPrezzoSpettacolo() {
+		BigDecimal sum = BigDecimal.ZERO;
+		BigDecimal counter = BigDecimal.ZERO;
+		
+		for (Evento evento: eventi) {
+			if (evento instanceof Spettacolo) {
+			sum = sum.add(((Spettacolo) evento).getPrezzo());
+			counter = counter.add(new BigDecimal(1));
+			}}
+		
+		return sum.divide(counter, 2, RoundingMode.HALF_UP);
+
+	}
+	
+	public BigDecimal mediaPrezzoEvento() {
+		BigDecimal sum = BigDecimal.ZERO;
+		BigDecimal counter = BigDecimal.ZERO;
+		
+		for (Evento evento: eventi) {
+			if (evento instanceof IPrice) {
+			sum = sum.add(((IPrice) evento).getPrezzo());
+			counter = counter.add(new BigDecimal(1));
+			}}
+				
+		return sum.divide(counter, 2, RoundingMode.HALF_UP);
+	}
+
 }
 
 

@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-public class Concerto extends Evento {
+public class Concerto extends Evento implements IPrice {
 
 	private LocalTime ora;
 	private BigDecimal prezzo;

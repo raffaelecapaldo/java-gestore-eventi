@@ -21,7 +21,7 @@ public class Main {
 			evento = new Evento(titoloEvento, dataEvento, numPosti);
 		 
 		} catch (Exception e) {
-			System.out.println("Errore: " + e.getMessage());
+			System.err.println("Errore: " + e.getMessage());
 			error = true;
 		}} while (error);
 		
@@ -41,10 +41,38 @@ public class Main {
 				try {
 					evento.prenota(Integer.valueOf(sc.nextLine()));
 				}  catch (Exception e) {
-					System.out.println("Errore : " + e.getMessage());
+					System.err.println("Errore : " + e.getMessage());
 					errorPrenotazione = true;
 				}
 			}} while (errorPrenotazione);
+		
+		System.out.println("Posti prenotati: " + evento.getPostiPrenotati());
+		System.out.println("Posti disponibili: " + (evento.getPosti()-evento.getPostiPrenotati()));
+		
+		String rispostaDisdette;
+		boolean erroreDisdette = false;
+		do {
+		do {
+			erroreDisdette = false;
+			System.out.print("Vuoi disdire dei posti?");
+			rispostaDisdette = sc.nextLine().toLowerCase();
+			error = !rispostaDisdette.equals("s") && !rispostaDisdette.equals("n");
+			if (error) System.out.println("INSERIRE SOLO S O N");
+			} while (error);
+			
+		if (rispostaDisdette.equals("s")) {
+			System.out.print("Quanti posti vuoi disdire? ");
+			try {
+				evento.disdici(Integer.valueOf(sc.nextLine()));
+			}  catch (Exception e) {
+				System.err.print("Errore:" + e.getMessage());
+				erroreDisdette = true;
+			}
+		}} while (erroreDisdette);
+		
+		System.out.println("Posti prenotati: " + evento.getPostiPrenotati());
+		System.out.println("Posti disponibili: " + (evento.getPosti()-evento.getPostiPrenotati()));
+
 		
 	}
 }

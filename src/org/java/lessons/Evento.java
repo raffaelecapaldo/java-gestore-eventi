@@ -33,6 +33,7 @@ public class Evento {
 		if (data.isBefore(LocalDate.now()) || postiPrenotati-quantita < 0)
 			throw new Exception("Evento passato o posti da disdire superiori a numero posti prenotati");
 		postiPrenotati =- quantita;
+		System.out.println("Posti disdetti");
 			
 	}
 	

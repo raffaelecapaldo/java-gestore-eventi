@@ -30,7 +30,7 @@ public class Main {
 		do {
 		do {
 			errorPrenotazione = false;
-			System.out.print("\nVuoi già prenotare dei posti?");
+			System.out.print("\nVuoi già prenotare dei posti? [S/N]");
 			rispostaPrenotazione = sc.nextLine().toLowerCase();
 			error = !rispostaPrenotazione.equals("s") && !rispostaPrenotazione.equals("n");
 			if (error) System.out.println("INSERIRE SOLO S O N");
@@ -54,7 +54,7 @@ public class Main {
 		do {
 		do {
 			erroreDisdette = false;
-			System.out.print("\nVuoi disdire dei posti? ");
+			System.out.print("\nVuoi disdire dei posti? [S/N] ");
 			rispostaDisdette = sc.nextLine().toLowerCase();
 			error = !rispostaDisdette.equals("s") && !rispostaDisdette.equals("n");
 			if (error) System.out.println("INSERIRE SOLO S O N");

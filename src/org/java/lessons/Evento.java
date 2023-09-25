@@ -52,6 +52,10 @@ public class Evento {
 	public String getData() {
 		return data.format(formatter);
 	}
+	
+	public LocalDate getRealDate() {
+		return data;
+	}
 
 	public void setData(String dataString) throws Exception {
 		LocalDate dataControllo = LocalDate.parse(dataString, formatter);
